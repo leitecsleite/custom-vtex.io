@@ -8,9 +8,9 @@ type Location = {
     uf: string 
  }
  
- export async function useFetchLocation ( cepLocation : string): Promise <Location> {
- 
-  const response = await fetch(`https://viacep.com.br/ws/${cepLocation }/json/`)
+ export async function getAddress ( cepLocation : string): Promise <Location> {
+
+    const response = await fetch(`https://viacep.com.br/ws/${cepLocation }/json/`)
  
     const data = await response.json()
  

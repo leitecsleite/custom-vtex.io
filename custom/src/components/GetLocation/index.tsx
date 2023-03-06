@@ -3,7 +3,7 @@ import IconSpinner from "../../assets/icon/spinner";
 import { onlyNumber } from "../../utils/onlyNymber";
 
 import "./styles.css";
-import { useFetchLocation } from "../../hooks/useFetchLocation";
+import { getAddress } from "../../utils/getAddress";
 
 type DataLocation = {
   bairro: string;
@@ -82,7 +82,7 @@ export default function GetLocation() {
 
     if (cepLocation?.length === 8) {
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      const data = await useFetchLocation(cepLocation);
+      const data = await getAddress(cepLocation);
       setDataLocation(data);
       setMessageError(false);
     } else {
